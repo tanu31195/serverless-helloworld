@@ -44,9 +44,11 @@ Can be complex and time consuming to manually configure below AWS services
 
 ## Lambda <https://aws.amazon.com/lambda/>
 
+<https://docs.aws.amazon.com/lambda/latest/dg/welcome.html>
+
 Announced in reinvent 2014
 Serverless service you only pay for what you use and without any type of application or backend service with zero administration
-Pay per execution time and memory (CPU based workload)
+Pay per execution time and allocated memory (CPU based workload)
 Default 1000 simultaneous Lambda instances
 Smart resource allocation
 
@@ -56,6 +58,8 @@ Smart resource allocation
 - Handling Failures
 - OS management
 - Utilization management
+
+The Lambda functions can perform any kind of computing task, from serving web pages and processing streams of data to calling APIs and integrating with other AWS services.
 
 ### Lambda API
 
@@ -70,6 +74,8 @@ Supports sync and async
 - Chat bots
 - IT automation
 
+<https://www.serverless.com/aws-lambda>
+
 ## Serverless Framework <https://github.com/serverless/serverless>
 
 - Above managed services are defined as a configuration (.yaml) and code
@@ -77,6 +83,20 @@ Supports sync and async
 - Makes deployment infrastructure portable
 - Possible to configure cross vendor
 
+<https://www.youtube.com/watch?v=mRkUnA3mEt4&list=PLIIjEI2fYC-C3NJF7a4-Cvh5hjdCmrVmN>
+
 `npm i -g serverless`
 `which serverless`
 `serverless --help`
+
+`serverless config credentials --provider aws --key xxxxx --secret xxxxxx`
+
+`serverless create --help`
+
+`serverless create --template aws-nodejs --path first-example --name first-example`
+
+`serverless invoke local --function hello`
+
+`serverless deploy`
+
+`serverless invoke --function hello --log`
