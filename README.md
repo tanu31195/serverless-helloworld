@@ -100,3 +100,5 @@ Supports sync and async
 `serverless deploy`
 
 `serverless invoke --function hello --log`
+
+`curl https://ziy8ye2y3e.execute-api.us-east-1.amazonaws.com/dev/currentTime`
