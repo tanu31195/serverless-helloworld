@@ -76,6 +76,19 @@ Supports sync and async
 
 <https://www.serverless.com/aws-lambda>
 
+## SNS (Simple Notification Service)
+
+- Publisher/Subscriber system
+- Publishing message to a topic can deliver to many subscribers of different types(SQS, Lambda, Email)
+
+[SNS vs SQS](https://www.youtube.com/watch?v=mXk0MNjlO7A&ab_channel=BeABetterDev)
+
+## SQS (Simple Queue Service)
+
+- Queueing service for message processing
+- The system must poll (check the status) the queue to discover new events
+- Messages in a queue are typically processed by a single consumer
+
 ## Serverless Framework <https://github.com/serverless/serverless>
 
 - Above managed services are defined as a configuration (.yaml) and code
