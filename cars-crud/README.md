@@ -39,3 +39,32 @@ functions:
 layers:
   None
 Serverless: Deprecation warnings:
+
+All functionalities as provided by this plugin are now supported by Serverless Framework natively:
+npm install --save-dev serverless-pseudo-parameters
+
+`Resource: arn:aws:dynamodb:#{AWS::Region}:#{AWS::AccountId}:table/${self:service}-cars-${opt-stage}`
+
+#{AWS::Region} this is from the pseudo parameters plugin
+
+Allows to use the CloudFormation Pseudo Parameters in the serverless.yml.
+
+
+Allows access to dynamodb and the specific table
+
+iamRoleStatements:
+   - Effect: "Allow"
+     Action:
+      - dynamodb:PutItem
+      - dynamodb:Scan*
+      - dynamodb:GetItem
+      - dynamodb:UpdateItem
+      - dynamodb:DeleteItem
+     Resource: arn:aws:dynamodb:#{AWS::Region}:#{AWS::AccountId}:table/${self:service}-cars-${opt-stage}
+
+
+Check logs for specific function
+serverless logs -f functionName --stage dev
+
+Remove the stack
+serverless remove --stage dev

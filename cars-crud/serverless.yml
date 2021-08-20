@@ -30,11 +30,15 @@ provider:
 #  region: us-east-1
 
 # you can add statements to the Lambda function's IAM Role here
-#  iamRoleStatements:
-#    - Effect: "Allow"
-#      Action:
-#        - "s3:ListBucket"
-#      Resource: { "Fn::Join" : ["", ["arn:aws:s3:::", { "Ref" : "ServerlessDeploymentBucket" } ] ]  }
+iamRoleStatements:
+   - Effect: "Allow"
+     Action:
+      - dynamodb:PutItem
+      - dynamodb:Scan*
+      - dynamodb:GetItem
+      - dynamodb:UpdateItem
+      - dynamodb:DeleteItem
+     Resource: arn:aws:dynamodb:#{AWS::Region}:#{AWS::AccountId}:table/${self:service}-cars-${opt-stage}
 #    - Effect: "Allow"
 #      Action:
 #        - "s3:PutObject"
@@ -57,6 +61,9 @@ environment:
 #    - '!exclude-me-dir/**'
 #    - include-me.js
 #    - include-me-dir/**
+
+plugins:
+  - serverless-pseudo-parameters
 
 functions:
   create:

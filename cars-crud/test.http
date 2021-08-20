@@ -1,0 +1,18 @@
+POST https://yit1gxqol4.execute-api.us-east-1.amazonaws.com/dev/v1/car
+
+{
+    "name" : "Mitsubishi Lance Evo VIII",
+    "price" : 4000000
+}
+
+###
+GET https://yit1gxqol4.execute-api.us-east-1.amazonaws.com/dev/v1/car
+
+###
+GET https://yit1gxqol4.execute-api.us-east-1.amazonaws.com/dev/v1/car/{name}
+
+###
+PUT https://yit1gxqol4.execute-api.us-east-1.amazonaws.com/dev/v1/car/{name}
+
+###
+DELETE https://yit1gxqol4.execute-api.us-east-1.amazonaws.com/dev/v1/car/{name}
